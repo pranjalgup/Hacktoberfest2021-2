@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="heading">Divyam Sharma</h1>
+
+    <p id="counter" data-target="4000">0</p>
+    <button id="i" style="background-color: aqua">Start</button>
+    <button id="j" style="background-color: aqua">Stop</button>
+    <script>
+      const startref = document.getElementById("i");
+      const stopref = document.getElementById("j");
+      const heading = document.querySelector(".heading");
+      let num = 0;
+      let interval;
+
+      const start = () => {
+        heading.innerHTML = "Loading...";
+        interval = setInterval(() => {
+          heading.innerHTML = `${num}`;
+          num++;
+        }, 1000);
+      };
+
+      startref.addEventListener("click", start);
+      stopref.addEventListener("click", () => {
+        clearInterval(interval);
+      });
+    </script>
+    <script src="index.js"></script>
+  </body>
+</html>
